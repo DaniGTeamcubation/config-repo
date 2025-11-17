@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: member-service
+          uri: lb://member-service
+          predicates:
+            - Path=/api/members/**
+        - id: claim-service
+          uri: lb://claim-service
+          predicates:
+            - Path=/api/claims/**
+
+app:
+  message: API Gateway - Configured from Config Server
