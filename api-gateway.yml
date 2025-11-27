@@ -19,6 +19,10 @@ spring:
           uri: lb://claim-service
           predicates:
             - Path=/api/claims/**
+        - id: document-service
+          uri: lb://document-service
+          predicates:
+            - Path=/api/documents/**
 
 app:
   message: API Gateway - Configured from Config Server
