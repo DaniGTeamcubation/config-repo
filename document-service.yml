@@ -22,7 +22,6 @@ spring:
       file-size-threshold: 2KB
       location: ${java.io.tmpdir}
 
-
 file:
   upload-dir: uploads
 
