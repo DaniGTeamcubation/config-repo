@@ -11,18 +11,30 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=0
+
         - id: member-service
           uri: lb://member-service
           predicates:
             - Path=/api/members/**
+
         - id: claim-service
           uri: lb://claim-service
           predicates:
             - Path=/api/claims/**
+
         - id: document-service
           uri: lb://document-service
           predicates:
             - Path=/api/documents/**
+
+jwt:
+  secret: 404E635
 
 app:
   message: API Gateway - Configured from Config Server
