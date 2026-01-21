@@ -5,6 +5,23 @@ spring:
   application:
     name: ai-service
 
+  datasource:
+    url: jdbc:h2:mem:iadb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
   ai:
     openai:
       api-key: ${OPENROUTER_API_KEY:sk-or-v1-280716e044ebdc3791c311e607c6efa5ac0f886bd95f4b0a25db3ad9ffe8d59}
