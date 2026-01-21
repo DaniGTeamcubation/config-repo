@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: ai-service
+
+  ai:
+    openai:
+      api-key: ${OPENROUTER_API_KEY:API_KEY}
+      base-url: https://openrouter.ai/api/v1
+
+ai:
+  provider: openrouter
+  model: google/gemini-pro
+  temperature: 0.7
+  max-tokens: 2000
+
+aws:
+  s3:
+    bucket: document-bucket
+    endpoint: http://localhost:4566
+
+app:
+  message: IA Service - Configured from Config Server
