@@ -7,7 +7,7 @@ spring:
 
   ai:
     openai:
-      api-key: ${OPENROUTER_API_KEY:API_KEY}
+      api-key: ${OPENROUTER_API_KEY:sk-or-v1-280716e044ebdc3791c311e607c6efa5ac0f886bd95f4b0a25db3ad9ffe8d59}
       base-url: https://openrouter.ai/api/v1
 
 ai:
